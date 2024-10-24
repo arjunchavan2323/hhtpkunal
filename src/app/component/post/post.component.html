@@ -1,0 +1,20 @@
+<!-- <p>{{productinfo|json}}</p> -->
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card" *ngFor="let post of productinfo">
+            <div class="card-header">
+                 <p>{{post.title}}</p>
+            </div>
+            <div class="card-body">
+                <p>{{post.body}}</p>
+            </div>
+            <div class="card-footer">
+                <p class="text-right">
+                    <button class="btn btn-primary" [routerLink]="['/post', post.id]">show more</button>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>

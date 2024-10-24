@@ -1,0 +1,21 @@
+<h1 class="text-success" *ngIf="!postid">create Post</h1>
+<h2 class="text-warning" *ngIf="postid">Update Post</h2>
+
+<form [formGroup]="postform" (ngSubmit)="onsubmitbtn()">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" formControlName="title">
+        
+    </div>
+    <div class="form-group">
+        <label for="body">body</label>
+      
+        <textarea class="form-control" formControlName="body"></textarea>
+    </div>
+    <div class="text-right">
+        <button class="btn btn-primary" *ngIf="!postid">Create Post</button>
+        <button class="btn btn-primary" (click)="updatepost()" *ngIf="postid" type="button">Update Post</button>
+
+    </div>
+
+</form>
